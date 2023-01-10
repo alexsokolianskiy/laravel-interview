@@ -14,3 +14,4 @@ docker-compose up
 composer install inside php container
 node ^16.0 required to run npm install & npm run dev
 run migrations inside php container
+run queue work to make delete jobs
