@@ -69,12 +69,15 @@ export default {
             }
             return filterStr;
         },
-        //here should be debounce to no spam server with queries
+        //in ideal word when we all have enough time to spend with tests tasks here should be debounce for
+        // no spam server with queries
         async applyFilters() {
             await this.getData()
         },
+        // in task there are no info how we should update table when user will be removed
+        // for example we can use pusher or another alternative to update user table
+        // with a signal that user was removed
         async removeUser(e) {
-            console.log(e.target.id);
             const response = await fetch(`/users/remove/${e.target.id}`);
             const json = await response.json();
         }
