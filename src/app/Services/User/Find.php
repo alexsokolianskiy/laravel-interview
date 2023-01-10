@@ -2,9 +2,10 @@
 
 namespace App\Services\User;
 
-use App\Exceptions\User\InvalidPasswordException;
-use App\Exceptions\User\UserNotFoundException;
 use App\Models\User;
+use Illuminate\Database\Eloquent\Collection;
+use App\Exceptions\User\UserNotFoundException;
+use App\Exceptions\User\InvalidPasswordException;
 
 class Find
 {
@@ -20,5 +21,17 @@ class Find
         }
 
         throw new InvalidPasswordException();
+    }
+
+    public function all(array $filters = []): Collection
+    {
+        $user = User::query();
+        foreach ($filters as $key => $value) {
+            if ($value) {
+                $user->where($key, 'like', $value . '%');
+            }
+        }
+
+        return $user->get();
     }
 }
