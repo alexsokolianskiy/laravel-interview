@@ -1,4 +1,4 @@
-Developer Test Task
+### Developer Test Task
 1. Install laravel with Vue.js from scratch.
 2. Create entity and migration for users (id, username, password, first_name, last_name)
 3. Create console command to add user in by entering first_name, last_name.
@@ -9,14 +9,8 @@ Developer Test Task
 7. All pages should have routes and user list page should be visible only for authorised (logined) users
 8. create git repository and send link for checking
 
-
-Tools / Websites that can be helpful
-
-• Search Engine (Google)
-• Laravel documentation
-• God’s help
-
-
-Test Instruction and Time
-
-• Ideal to finish during 2-3 days after receiving.
+### HOWTO RUN PROJECT
+docker-compose up
+composer install inside php container
+node ^16.0 required to run npm install & npm run dev
+run migrations inside php container
